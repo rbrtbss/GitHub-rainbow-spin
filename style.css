@@ -1,0 +1,48 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  background-color: aliceblue;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.spinner {
+  width: 250px;
+  height: 250px;
+  border: 3px solid white;
+  border-radius: 50%;
+  position: relative;
+
+  background: conic-gradient(cyan, yellow, magenta, cyan);
+
+  animation: spin-spin 2s infinite linear;
+}
+.spinner::before {
+  content: "";
+  width: 80%;
+  height: 80%;
+  border: 3px solid rgb(255, 255, 255);
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  background-color: aliceblue;
+  transform: translate(-50%, -50%);
+  box-shadow: inset 0px 0px 110px -70px black;
+}
+
+@keyframes spin-spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
